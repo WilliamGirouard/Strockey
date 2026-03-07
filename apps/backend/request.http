@@ -1,0 +1,11 @@
+### Get hockey matches
+GET http://localhost:3000/v1/hockey/matches
+
+### Get hockey streams
+GET http://localhost:3000/v1/hockey/matches/:matchId/streams
+
+### Get motorsports matches
+GET http://localhost:3000/v1/motorsports/matches
+
+### Get motorsports streams
+GET http://localhost:3000/v1/motorsports/matches/australian-grand-prix-2408111/streams
