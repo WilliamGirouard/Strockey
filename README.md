@@ -7,7 +7,7 @@ Strockey = Streaming Hockey
   
   2- npm i
   
-  3- npm install --prefix backend
+  3- npm install --prefix apps/backend
   
-  4- npm install --prefix frontend
+  4- npm install --prefix apps/frontend
   
