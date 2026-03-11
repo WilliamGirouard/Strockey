@@ -20,7 +20,7 @@ export class CacheHelperService {
         const refreshPromise = (async () => {
           try {
             const fresh = await fetchFn();
-            await this.cacheManager.set(key, fresh, ttl);
+            await this.cacheManager.set(key, fresh, ttl * 1000);
           } finally {
             this.inFlightRequests.delete(key);
           }
@@ -36,7 +36,7 @@ export class CacheHelperService {
     await this.cacheManager.set(
       key,
       data,
-      ttl + Math.floor(Math.random() * 10),
+    (ttl + Math.floor(Math.random() * 10)) * 1000,
     );
 
     return data;
