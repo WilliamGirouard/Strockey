@@ -32,7 +32,7 @@ export class MotorSportsService implements OnModuleInit {
           const matches = await this.sportsApi.getMatchesBySport(Sports.MOTORSPORTS);
           const filteredMatches: MotorsportsMatchDto[] = [];
           for (const match of matches) {
-            if (!match.title.includes('F1') && !match.title.includes('Formula 1')) {
+            if (!match.title.includes('F1') && !match.title.includes('Formula 1') && !match.title.includes('MotoGP')) {
               continue;
             }
             // ← removed per-match stream check, was causing excessive API calls
