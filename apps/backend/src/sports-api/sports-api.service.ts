@@ -8,6 +8,7 @@ import { APIMatch } from './interfaces/match.interface';
 @Injectable()
 export class SportsApiService {
   private readonly logger = new Logger(SportsApiService.name);
+  private readonly baseUrl = 'YOUR_API_BASE_URL_HERE';
 
   constructor(private readonly httpService: HttpService) {}
 
@@ -24,18 +25,18 @@ export class SportsApiService {
   }
 
   async getAllMatches(): Promise<APIMatch[]> {
-    return this.get('https://streamed.pk/api/matches/all');
+    return this.get(`${this.baseUrl}/matches/all`);
   }
 
   async getAllMatchesToday(): Promise<APIMatch[]> {
-    return this.get('https://streamed.pk/api/matches/all-today');
+    return this.get(`${this.baseUrl}/matches/all-today`);
   }
 
   async getMatchesBySport(sport: Sports): Promise<APIMatch[]> {
-    return this.get(`https://streamed.pk/api/matches/${sport}`);
+    return this.get(`${this.baseUrl}/matches/${sport}`);
   }
 
   async getStreams(source: string, id: string): Promise<Stream[]> {
-    return this.get(`https://streamed.pk/api/stream/${source}/${id}`);
+    return this.get(`${this.baseUrl}/stream/${source}/${id}`);
   }
 }
