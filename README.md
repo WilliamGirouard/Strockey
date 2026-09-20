@@ -23,6 +23,8 @@ A full-stack sports match browser built to explore data aggregation, caching str
 
 ## Architecture
 
+![Strockey Architecture Diagram](./docs/architecture.png)
+
 The backend is organized into feature modules:
 
 ```
